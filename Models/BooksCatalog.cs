@@ -12,7 +12,7 @@ public class BooksCatalog
 
     public BooksCatalog()
     {
-        ReadBooksDataFromCSVFile("Data/BooksTest.csv");
+        ReadBooksDataFromCSVFile("Data/books.csv");
     }
 
     public void ReadBooksDataFromCSVFile(string fileName)
