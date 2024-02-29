@@ -1,0 +1,77 @@
+@using Bookish.Models;
+@model Book;
+@{
+    ViewData["Title"] = "Books Search Page";
+}
+
+<div>
+    <form method="get" action="@Url.Action("Search", "BookManagement")">
+    
+    @* <label for="search">Search</label> *@
+    @* <input type="text" name="searchTitle" id="searchTitle" /> *@
+        <input type="text" class="form-control" placeholder="Enter Book Title" name="searchTitle" id="searchTitle" aria-label="searchTitle" aria-describedby="basic-addon1">
+        <button type="submit">Search</button>
+    </form>
+
+<body>
+<div class="card" style="width: 18rem;">
+  <!-- <img src="{@Model.ImageUrlL}" class="card-img-top" alt="..."> -->
+@* <img src="..." class="card-img-top" alt="..."> *@
+<img src="@Model.ImageUrlL" class="card-img-top" alt="...">
+
+  
+  <div class="card-body">
+    <h5 class="card-title">@Model.BookTitle</h5>
+    <p class="card-text">@Model.ISBN</p>
+        <p class="card-text">@Model.BookTitle</p>
+
+     @* <th scope="row">@item.ISBN</th>
+                <td>@item.BookTitle</td>
+                <td>@item.BookAuthor</td>
+                <td>@item.YearOfPublication</td>
+                <td>@item.Publisher</td> *@
+
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</body>
+</div>
+
+
+
+
+@* <div>
+
+    <h1 class="display-4">Welcome to Book Library</h1>
+     <p>PLease Search books With Book Title </p>
+    <form id="myForm" action="ProcessForm" method="post">
+    <span class="input-group-text" id="basic-addon1">Book Title</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <button type="submit">Submit</button>
+    </form>
+
+
+
+
+    <form asp-controller="BookManagementController" asp-action="Search" method="get">
+    <p>
+
+        <!-- <select asp-for="MovieGenre" asp-items="Model.Genres">
+            <option value="">All</option>
+        </select> -->
+
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form> *@
+
+
+
+    <!-- <div class="input-group mb-3">
+
+    <span class="input-group-text" id="basic-addon1">Book Title</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <button></button>
+    </div> -->
+@*    
+</div> *@

@@ -19,13 +19,19 @@
     </a>
 }
 
+
+
 <div>
 
     <h1 class="display-4">Welcome to Book Library</h1>
      <p>PLease find the books that we have </p>
-    <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1">Book Title</span>
-    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+   
+    <div>
+    <form method="get" action="@Url.Action("Search", "BookManagement")">
+    <label for="search">Search</label>
+    <input type="text" name="searchTitle" id="searchTitle" />
+    <button type="submit">Perform search</button>
+    </form>
     </div>
 
      <table> 
@@ -36,9 +42,6 @@
                 <th scope="col">BookAuthor</th>
                 <th scope="col">YearOfPublication</th>
                 <th scope="col">Publisher</th>
-                <!-- <th scope="col">ImageUrlS</th>
-                <th scope="col">ImageUrlM</th>
-                <th scope="col">ImageUrlL</th> -->
             </tr>
          </thead>
         <tbody>
@@ -50,9 +53,6 @@
                 <td>@item.BookAuthor</td>
                 <td>@item.YearOfPublication</td>
                 <td>@item.Publisher</td>
-                 @* <td>@item.ImageUrlS</td>
-                <td>@item.ImageUrlM</td>
-                <td>@item.ImageUrlL</td>              *@
             </tr>
              }            
              

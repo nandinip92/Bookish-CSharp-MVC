@@ -1,0 +1,13 @@
+@using Bookish.Models;
+@model Book;
+@{
+    ViewData["Title"] = @Model.BookTitle;
+}
+
+<div>
+    <p>@Model.ISBN</th>
+                <p>@Model.BookTitle</p>
+                <p>@Model.BookAuthor</p>
+                <p>@Model.YearOfPublication</p>
+                <p>@Model.Publisher</p>
+</div>
