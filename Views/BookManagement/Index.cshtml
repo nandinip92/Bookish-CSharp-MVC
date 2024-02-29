@@ -1,0 +1,61 @@
+@using Bookish.Models;
+@model List<Book>;
+@{
+    ViewData["Title"] = "Books Home Page";
+}
+
+@if (ViewBag.Page > 0)
+{
+    <a href="@Url.Action("Index", new { page = ViewBag.Page - 1 })" 
+       class="btn btn-default">
+        &laquo; Prev
+    </a>
+}
+@if (ViewBag.Page < ViewBag.MaxPage)
+{
+    <a href="@Url.Action("Index", new { page = ViewBag.Page + 1 })" 
+       class="btn btn-default">
+        Next &raquo;
+    </a>
+}
+
+<div>
+
+    <h1 class="display-4">Welcome to Book Library</h1>
+     <p>PLease find the books that we have </p>
+    <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">Book Title</span>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+
+     <table> 
+        <thead>
+             <tr>
+                <th scope="col">ISBN</th>
+                <th scope="col">BookTitle</th>
+                <th scope="col">BookAuthor</th>
+                <th scope="col">YearOfPublication</th>
+                <th scope="col">Publisher</th>
+                <!-- <th scope="col">ImageUrlS</th>
+                <th scope="col">ImageUrlM</th>
+                <th scope="col">ImageUrlL</th> -->
+            </tr>
+         </thead>
+        <tbody>
+            @foreach(var item in Model){
+            <tr>    
+
+                <th scope="row">@item.ISBN</th>
+                <td>@item.BookTitle</td>
+                <td>@item.BookAuthor</td>
+                <td>@item.YearOfPublication</td>
+                <td>@item.Publisher</td>
+                 @* <td>@item.ImageUrlS</td>
+                <td>@item.ImageUrlM</td>
+                <td>@item.ImageUrlL</td>              *@
+            </tr>
+             }            
+             
+        </tbody>
+     </table>
+</div>
