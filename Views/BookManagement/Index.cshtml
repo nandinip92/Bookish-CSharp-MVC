@@ -28,9 +28,8 @@
    
     <div>
     <form method="get" action="@Url.Action("Search", "BookManagement")">
-    <label for="search">Search</label>
-    <input type="text" name="searchTitle" id="searchTitle" />
-    <button type="submit">Perform search</button>
+    <input type="text" name="searchTitle" id="searchTitle" aria-label="searchTitle"/>
+    <button type="submit" class="btn btn-outline-primary">Search</button>
     </form>
     </div>
 

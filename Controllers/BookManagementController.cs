@@ -14,9 +14,8 @@ public class BookManagement : Controller
     public IActionResult Index(int page = 0)
     {
         const int PageSize = 20;
-        var Search = new List<int> { 1, 2, 3, 4, 5 };
         var booksList = new BooksCatalog().BooksList;
-        booksList = booksList.OrderBy(title => title.BookTitle).ToList();
+        // booksList = booksList.OrderBy(title => title.BookTitle).ToList();
         var count = booksList.Count();
         var booksData = booksList.Skip(page * PageSize).Take(PageSize).ToList();
         ViewBag.MaxPage = (count / PageSize) - (count % PageSize == 0 ? 1 : 0);
@@ -24,27 +23,11 @@ public class BookManagement : Controller
         return View(booksData);
     }
 
-    // [HttpPost]
-    // public IActionResult ProcessForm(string SearchString)
-    // {
-    //     // Process the form data (e.g., validate, save to database, etc.)
-    //     // Redirect to a different URL after processing
-    //     return RedirectToAction("Search", new { SearchString });
-    // }
-
-    // [HttpGet("[controller]/{searchTitle}")]
     public IActionResult Search(string searchTitle = "")
     {
         var booksCatalog = new BooksCatalog();
         var book = booksCatalog.SearchBook(searchTitle);
-        // if (searchTitle == "")
-        // {
-            return View(book);
-        // }
-        // else
-        // {
-        //     return View("~/Views/BookManagement/BookDetails.cshtml", book);
-        // }
+        return View(book);
     }
 }
 

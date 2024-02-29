@@ -6,32 +6,20 @@
 
 <div>
     <form method="get" action="@Url.Action("Search", "BookManagement")">
-    
-    @* <label for="search">Search</label> *@
-    @* <input type="text" name="searchTitle" id="searchTitle" /> *@
-        <input type="text" class="form-control" placeholder="Enter Book Title" name="searchTitle" id="searchTitle" aria-label="searchTitle" aria-describedby="basic-addon1">
-        <button type="submit">Search</button>
+        <input type="text" class="form-control" placeholder="Enter Book Title" name="searchTitle" id="searchTitle" aria-label="searchTitle">
+        <button type="submit" class="btn btn-outline-primary">Search</button>
     </form>
 
 <body>
-<div class="card" style="width: 18rem;">
-  <!-- <img src="{@Model.ImageUrlL}" class="card-img-top" alt="..."> -->
-@* <img src="..." class="card-img-top" alt="..."> *@
-<img src="@Model.ImageUrlL" class="card-img-top" alt="...">
+    <div class="card" style="width: 18rem;">
+        <img src="@Model.ImageUrlL" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">@Model.BookTitle</h5>
+        <p class="card-text">Author: @Model.BookAuthor</p>
+        <p class="card-text">Publisher: @Model.Publisher</p>
+        <p class="card-text">Year Of Publication: @Model.YearOfPublication</p>
 
-  
-  <div class="card-body">
-    <h5 class="card-title">@Model.BookTitle</h5>
-    <p class="card-text">@Model.ISBN</p>
-        <p class="card-text">@Model.BookTitle</p>
-
-     @* <th scope="row">@item.ISBN</th>
-                <td>@item.BookTitle</td>
-                <td>@item.BookAuthor</td>
-                <td>@item.YearOfPublication</td>
-                <td>@item.Publisher</td> *@
-
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    @* <a href="#" class="btn btn-primary">Go somewhere</a> *@
   </div>
 </div>
 </body>
